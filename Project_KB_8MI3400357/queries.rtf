@@ -1,0 +1,293 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2759
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red24\green25\blue27;\red246\green247\blue249;
+}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c12549\c12941\c14118;\cssrgb\c97255\c97647\c98039;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww15180\viewh18740\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf0 \expnd0\expndtw0\kerning0
+Select all subclasses of genre:\kerning1\expnd0\expndtw0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 PREFIX :<http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/>\
+\
+SELECT ?genre WHERE \{\
+  ? genre rdfs: subClassOf :Genre .\
+\}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 ________________________________________________________________________\
+\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720\partightenfactor0
+\cf0 Select all books:\kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\
+PREFIX :<http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/>\
+\
+SELECT ?book WHERE \{\
+  ?book rdf:type :Book .\
+\}\
+________________________________________________________________________\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Select all books including subclasses:\kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\
+prefix :<http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/>\
+\
+SELECT ?book WHERE \{\
+  ?book rdf:type/rdfs:subClassOf* :Book .\
+\}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 ________________________________________________________________________\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Select all class and subclass relationships:\kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\
+\
+SELECT ?class ?subClass WHERE \{\
+  ?subClass rdfs:subClassOf ?class .\
+\}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 ________________________________________________________________________\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Select all property and subproperty relationships:\kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\
+\
+SELECT ?property ?subProperty WHERE \{\
+  ?subProperty rdfs:subPropertyOf ?property .\
+\}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 ________________________________________________________________________\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+Select all books:\kerning1\expnd0\expndtw0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\
+PREFIX :<http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/>\
+\
+SELECT ?book WHERE \{\
+  ?book rdf:type :Book .\
+\}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 ________________________________________________________________________\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Select authors and their books:\kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\
+PREFIX :<http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/>\
+\
+SELECT ?author ?book WHERE \{\
+  ?author rdf:type :Author .\
+  ?author :hasBook ?book .\
+\}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 ________________________________________________________________________\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+Select all books and their prices:\kerning1\expnd0\expndtw0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\
+PREFIX : <http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/>\
+\
+SELECT ?bookTitle ?price\
+WHERE \{\
+  ?book rdf:type :Book ;\
+        :hasTitle ?bookTitle ;\
+        :hasPrice ?price .\
+\}\
+______________________________________________________________________\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+Select all books and their genres:\kerning1\expnd0\expndtw0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\
+PREFIX : <http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/>\
+\
+SELECT ?bookTitle ?genre\
+WHERE \{\
+  ?book rdf:type :Book ;\
+        :hasTitle ?bookTitle ;\
+        rdf:type ?genre .\
+  ?genre rdfs:subClassOf :Genre .\
+\}\
+\
+______________________________________________________________________\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Select entities that are either books or authors:\kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\
+PREFIX :<http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/>\
+\
+SELECT ?entity WHERE \{\
+  \{ ?entity rdf:type :Book . \}\
+  UNION\
+  \{ ?entity rdf:type :Author . \}\
+\}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 ________________________________________________________________________\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Select fantasy books with more than 300 pages:\kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\
+PREFIX :<http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/>\
+\
+SELECT ?book WHERE \{\
+  ?book rdf:type :Book ;\
+        rdf:type :Fantasy ;\
+           :hasTitle ?title ;\
+           :hasPagesCount ?pages .\
+  FILTER(?pages > 300)\
+\}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 ________________________________________________________________________\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Select books published after 2000 with a rate greater than 4.5:\kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\
+PREFIX :<http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/>\
+\
+SELECT ?book WHERE \{\
+  ?book rdf:type :Book .\
+  ?book :hasPublicationDate ?date .\
+  ?book :hasRate ?rate .\
+  FILTER(?date > "2000-01-01T00:00:00"^^xsd:dateTime && ?rate > 4.5)\
+\}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 ________________________________________________________________________\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Select titles, prices, and author names starting with 'J' for books priced between 20 and 50:\kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\
+PREFIX :<http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/>\
+\
+SELECT ?title ?price ?authorName\
+WHERE \{\
+  ?book rdf:type :Book ;\
+        :hasTitle ?title ;\
+        :hasPrice ?price ;\
+        :hasAuthor ?author .\
+  ?author :hasName ?authorName .\
+  FILTER (?price >= 20 && ?price <= 50)\
+  FILTER (STRSTARTS(?authorName, "J"))\
+\}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 ________________________________________________________________________\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+Select books with more than 300 pages:\kerning1\expnd0\expndtw0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\
+PREFIX :<http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/>\
+\
+SELECT ?book ?pages WHERE \{\
+  ?book rdf:type :Book .\
+  ?book :hasPagesCount ?pages .\
+  FILTER(?pages > 300)\
+\}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 ________________________________________________________________________\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Select books and the first word of their titles:\kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\
+PREFIX :<http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/>\
+\
+SELECT ?book ?title ?firstWord WHERE \{\
+  ?book rdf:type :Book .\
+  ?book :hasTitle ?title .\
+  BIND(STRBEFORE(?title, " ") AS ?firstWord)\
+\}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 ________________________________________________________________________\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Select book titles, prices, rounded prices, and prices in euros:\kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\
+PREFIX :<http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/>\
+\
+SELECT ?title ?price ?roundedPrice ?priceInEuro\
+WHERE \{\
+  ?book rdf:type :Book ;\
+        :hasTitle ?title ;\
+        :hasPrice ?price .\
+  BIND(ROUND(?price) AS ?roundedPrice)\
+  BIND(?price * 0.51 AS ?priceInEuro)\
+\}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 ________________________________________________________________________\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+Select books, \cf3 \cb4 \outl0\strokewidth0 \strokec3 year of publication and book age:\cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+PREFIX : <http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/>\
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\
+\
+SELECT ?title ?publicationDate ?publicationYear ?age\
+WHERE \{\
+  ?book rdf:type :Book ;\
+        :hasTitle ?title ;\
+        :hasPublicationDate ?publicationDate .\
+  BIND(YEAR(?publicationDate) AS ?publicationYear)\
+  BIND(YEAR(NOW()) - ?publicationYear AS ?age)\
+\}\
+________________________________________________________________________\
+\
+\
+\
+}
