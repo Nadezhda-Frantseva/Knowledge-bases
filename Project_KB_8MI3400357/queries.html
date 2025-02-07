@@ -1,0 +1,163 @@
+<html><head><style>body {
+   color: black;
+}
+</style></head><body><p>Select all subclasses of genre:</p>
+<p>PREFIX rdfs: <a href="http://www.w3.org/2000/01/rdf-schema#">http://www.w3.org/2000/01/rdf-schema#</a>
+PREFIX :<a href="http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/">http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/</a></p>
+<p>SELECT ?genre WHERE {
+  ? genre rdfs: subClassOf :Genre .
+}</p>
+<hr>
+<p>Select all books:</p>
+<p>PREFIX rdf: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a>
+PREFIX :<a href="http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/">http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/</a></p>
+<p>SELECT ?book WHERE {
+  ?book rdf:type :Book .
+}</p>
+<hr>
+<p>Select all books including subclasses:</p>
+<p>PREFIX rdf: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a>
+PREFIX rdfs: <a href="http://www.w3.org/2000/01/rdf-schema#">http://www.w3.org/2000/01/rdf-schema#</a>
+prefix :<a href="http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/">http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/</a></p>
+<p>SELECT ?book WHERE {
+  ?book rdf:type/rdfs:subClassOf* :Book .
+}</p>
+<hr>
+<p>Select all class and subclass relationships:</p>
+<p>PREFIX rdfs: <a href="http://www.w3.org/2000/01/rdf-schema#">http://www.w3.org/2000/01/rdf-schema#</a></p>
+<p>SELECT ?class ?subClass WHERE {
+  ?subClass rdfs:subClassOf ?class .
+}</p>
+<hr>
+<p>Select all property and subproperty relationships:</p>
+<p>PREFIX rdfs: <a href="http://www.w3.org/2000/01/rdf-schema#">http://www.w3.org/2000/01/rdf-schema#</a></p>
+<p>SELECT ?property ?subProperty WHERE {
+  ?subProperty rdfs:subPropertyOf ?property .
+}</p>
+<hr>
+<p>Select all books:</p>
+<p>PREFIX rdf: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a>
+PREFIX :<a href="http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/">http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/</a></p>
+<p>SELECT ?book WHERE {
+  ?book rdf:type :Book .
+}</p>
+<hr>
+<p>Select authors and their books:</p>
+<p>PREFIX rdf: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a>
+PREFIX :<a href="http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/">http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/</a></p>
+<p>SELECT ?author ?book WHERE {
+  ?author rdf:type :Author .
+  ?author :hasBook ?book .
+}</p>
+<hr>
+<p>Select all books and their prices:</p>
+<p>PREFIX rdf: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a>
+PREFIX : <a href="http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/">http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/</a></p>
+<p>SELECT ?bookTitle ?price
+WHERE {
+  ?book rdf:type :Book ;
+        :hasTitle ?bookTitle ;
+        :hasPrice ?price .
+}</p>
+<hr>
+<p>Select all books and their genres:</p>
+<p>PREFIX rdf: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a>
+PREFIX rdfs: <a href="http://www.w3.org/2000/01/rdf-schema#">http://www.w3.org/2000/01/rdf-schema#</a>
+PREFIX : <a href="http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/">http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/</a></p>
+<p>SELECT ?bookTitle ?genre
+WHERE {
+  ?book rdf:type :Book ;
+        :hasTitle ?bookTitle ;
+        rdf:type ?genre .
+  ?genre rdfs:subClassOf :Genre .
+}</p>
+<hr>
+<p>Select entities that are either books or authors:</p>
+<p>PREFIX rdf: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a>
+PREFIX :<a href="http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/">http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/</a></p>
+<p>SELECT ?entity WHERE {
+  { ?entity rdf:type :Book . }
+  UNION
+  { ?entity rdf:type :Author . }
+}</p>
+<hr>
+<p>Select fantasy books with more than 300 pages:</p>
+<p>PREFIX rdf: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a>
+PREFIX :<a href="http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/">http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/</a></p>
+<p>SELECT ?book WHERE {
+  ?book rdf:type :Book ;
+        rdf:type :Fantasy ;
+           :hasTitle ?title ;
+           :hasPagesCount ?pages .
+  FILTER(?pages &gt; 300)
+}</p>
+<hr>
+<p>Select books published after 2000 with a rate greater than 4.5:</p>
+<p>PREFIX rdf: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a>
+PREFIX xsd: <a href="http://www.w3.org/2001/XMLSchema#">http://www.w3.org/2001/XMLSchema#</a>
+PREFIX :<a href="http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/">http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/</a></p>
+<p>SELECT ?book WHERE {
+  ?book rdf:type :Book .
+  ?book :hasPublicationDate ?date .
+  ?book :hasRate ?rate .
+  FILTER(?date &gt; &quot;2000-01-01T00:00:00&quot;^^xsd:dateTime &amp;&amp; ?rate &gt; 4.5)
+}</p>
+<hr>
+<p>Select titles, prices, and author names starting with &#39;J&#39; for books priced between 20 and 50:</p>
+<p>PREFIX rdf: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a>
+PREFIX :<a href="http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/">http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/</a></p>
+<p>SELECT ?title ?price ?authorName
+WHERE {
+  ?book rdf:type :Book ;
+        :hasTitle ?title ;
+        :hasPrice ?price ;
+        :hasAuthor ?author .
+  ?author :hasName ?authorName .
+  FILTER (?price &gt;= 20 &amp;&amp; ?price &lt;= 50)
+  FILTER (STRSTARTS(?authorName, &quot;J&quot;))
+}</p>
+<hr>
+<p>Select books with more than 300 pages:</p>
+<p>PREFIX rdf: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a>
+PREFIX :<a href="http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/">http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/</a></p>
+<p>SELECT ?book ?pages WHERE {
+  ?book rdf:type :Book .
+  ?book :hasPagesCount ?pages .
+  FILTER(?pages &gt; 300)
+}</p>
+<hr>
+<p>Select books and the first word of their titles:</p>
+<p>PREFIX rdf: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a>
+PREFIX :<a href="http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/">http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/</a></p>
+<p>SELECT ?book ?title ?firstWord WHERE {
+  ?book rdf:type :Book .
+  ?book :hasTitle ?title .
+  BIND(STRBEFORE(?title, &quot; &quot;) AS ?firstWord)
+}</p>
+<hr>
+<p>Select book titles, prices, rounded prices, and prices in euros:</p>
+<p>PREFIX rdf: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a>
+PREFIX :<a href="http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/">http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/</a></p>
+<p>SELECT ?title ?price ?roundedPrice ?priceInEuro
+WHERE {
+  ?book rdf:type :Book ;
+        :hasTitle ?title ;
+        :hasPrice ?price .
+  BIND(ROUND(?price) AS ?roundedPrice)
+  BIND(?price * 0.51 AS ?priceInEuro)
+}</p>
+<hr>
+<p>Select books, year of publication and book age:</p>
+<p>PREFIX : <a href="http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/">http://www.semanticweb.org/fnadezhda/ontologies/2024/0/book_ontology/</a>
+PREFIX rdf: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a>
+PREFIX xsd: <a href="http://www.w3.org/2001/XMLSchema#">http://www.w3.org/2001/XMLSchema#</a></p>
+<p>SELECT ?title ?publicationDate ?publicationYear ?age
+WHERE {
+  ?book rdf:type :Book ;
+        :hasTitle ?title ;
+        :hasPublicationDate ?publicationDate .
+  BIND(YEAR(?publicationDate) AS ?publicationYear)
+  BIND(YEAR(NOW()) - ?publicationYear AS ?age)
+}</p>
+<hr>
+</body></html>
